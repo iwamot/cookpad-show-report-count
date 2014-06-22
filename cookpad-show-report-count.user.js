@@ -2,7 +2,7 @@
 // @name         COOKPAD - Show Report Count
 // @namespace    http://iwamot.com/
 // @version      1.0.4
-// @author       IWAMOTO Takashi
+// @author       IWAMOTO Takashi <hello@iwamot.com> http://iwamot.com/
 // @description  クックパッドのサイト上で、レシピへのリンクテキストに、つくれぽ件数を追加します。
 // @include      http://cookpad.com/*
 // @homepage     https://github.com/iwamot/cookpad-show-report-count
