@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         COOKPAD - Show Report Count
 // @namespace    http://iwamot.com/
-// @version      1.0.4
+// @version      1.0.5
 // @author       IWAMOTO Takashi <hello@iwamot.com> http://iwamot.com/
 // @description  クックパッドのサイト上で、レシピへのリンクテキストに、つくれぽ件数を追加します。
 // @include      http://cookpad.com/*
@@ -41,7 +41,7 @@
       });
     } else {
       anchors.forEach(function(a){
-        GM_xmlhttpRequest({
+        setTimeout(function(){GM_xmlhttpRequest({
           method: 'GET',
           url: a.href,
           onload: function(response){
@@ -51,7 +51,7 @@
               insertReportCount(response.responseText, a.wrappedJSObject);
             }
           }
-        });
+        })}, 0);
       });
     }
   }
