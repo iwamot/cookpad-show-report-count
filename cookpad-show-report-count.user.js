@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         COOKPAD - Show Report Count
 // @namespace    http://iwamot.com/
-// @version      1.0.6
+// @version      1.0.7
 // @author       IWAMOTO Takashi <hello@iwamot.com> http://iwamot.com/
 // @description  クックパッドのサイト上で、レシピへのリンクテキストに、つくれぽ件数を追加します。
-// @include      http://cookpad.com/*
+// @include      https://cookpad.com/*
 // @connect      cookpad.com
 // @grant        GM_xmlhttpRequest
 // @homepage     https://github.com/iwamot/cookpad-show-report-count
@@ -53,7 +53,7 @@
               insertReportCount(response.responseText, a.wrappedJSObject);
             }
           }
-        })}, 0);
+        });}, 0);
       });
     }
   }
@@ -63,7 +63,7 @@
     var anchorNodeList = node.querySelectorAll('a');
     for (var i = 0, j = anchorNodeList.length; i < j; i++) {
       var a = anchorNodeList[i];
-      if (!a.href.match(/^http:\/\/cookpad\.com\/recipe\/\d+$/) || a.querySelector('img')) continue;
+      if (!a.href.match(/^https:\/\/cookpad\.com\/recipe\/\d+$/) || a.querySelector('img')) continue;
       anchors.push(a);
     }
     return anchors;
